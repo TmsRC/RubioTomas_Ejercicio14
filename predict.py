@@ -60,7 +60,7 @@ for C in hiperparametros:
     clasificador = SVC(C=C)
     clasificador.fit(proyeccion_train,y_train)
     predicciones = clasificador.predict(proyeccion_test)
-    scores.append(metrics.f1_score(y_test,predicciones,average='weighted'))
+    scores.append(metrics.f1_score(y_test,predicciones,average='macro'))
     
 mejor_C = hiperparametros[np.argmax(scores)]
 print(np.amax(scores))
